@@ -13,7 +13,6 @@ const directives = {
   waterMarker,
   draggable
 }
-console.log(directives)
 export default {
   install(Vue) {
     Object.keys(directives).forEach((key) => {

@@ -2,11 +2,11 @@ let findEle = (parent, type) => {
   return parent.tagName.toLowerCase() === type ? parent : parent.querySelector(type)
 }
 
-const trigger = (el, type) => {
+/* const trigger = (el, type) => {
   const e = document.createEvent('HTMLEvents')
   e.initEvent(type, true, true)
   el.dispatchEvent(e)
-}
+} */
 
 const emoji = {
   mounted: function (el) {
@@ -18,12 +18,12 @@ const emoji = {
       let val = $inp.value
       $inp.value = val.replace(regRule, '')
 
-      trigger($inp, 'input')
+      /* trigger($inp, 'input') */
     }
-    $inp.addEventListener('keyup', $inp.handle)
+    $inp.addEventListener('input', $inp.handle)
   },
   unmounted: function (el) {
-    el.$inp.removeEventListener('keyup', el.$inp.handle)
+    el.$inp.removeEventListener('input', el.$inp.handle)
   },
 }
 
